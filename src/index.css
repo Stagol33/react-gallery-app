@@ -416,3 +416,44 @@ html {
     font-size: 1.5rem;
   }
 }
+/* Updated photo css */
+.photo-container ul li {
+  /* Keep your existing styles */
+  cursor: pointer; /* Add cursor pointer */
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-container ul li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.photo-container ul li:hover::before {
+  opacity: 1;
+}
+
+.photo-container ul li::after {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  color: white;
+  font-size: 2rem;
+  font-weight: 300;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.photo-container ul li:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
